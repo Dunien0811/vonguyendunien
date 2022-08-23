@@ -1,6 +1,4 @@
 <?php
-
-/** Sets up the WordPress Environment. */
 require __DIR__ . '/wp-load.php';
 
 add_filter( 'wp_robots', 'wp_robots_no_robots' );
@@ -13,16 +11,9 @@ if ( is_array( get_site_option( 'illegal_names' ) ) && isset( $_GET['new'] ) && 
 	wp_redirect( network_home_url() );
 	die();
 }
-
-/**
- * Prints signup_header via wp_head.
- *
  * @since MU (3.0.0)
  */
 function do_signup_header() {
-	/**
-	 * Fires within the head section of the site sign-up screen.
-	 *
 	 * @since 3.0.0
 	 */
 	do_action( 'signup_header' );
